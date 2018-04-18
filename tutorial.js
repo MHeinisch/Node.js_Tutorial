@@ -46,3 +46,6 @@ fs.readdir('./', function (err, files) {
     console.log('Result', files);
   }
 });
+
+//////////////////////////////////////////
+// Below, we will explore the events module
