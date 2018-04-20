@@ -68,3 +68,6 @@ emitter.on('logging', (arg) => {
 
 // Raise an event
 emitter.emit('logging', { data: "Hello World" });
+
+//////////////////////////////////////////
+// Extending EventEmitter
