@@ -51,23 +51,24 @@ fs.readdir('./', function (err, files) {
 // Below, we will explore the events module
 
 const EventEmitter = require('events');
-const emitter = new EventEmitter();
+
+const Logger = require('./logger');
+const logger = new Logger();
 
 // Register a listener
-emitter.on('messageLogged', (arg) => {
+logger.on('messageLogged', (arg) => {
   console.log('Listener called', arg);
 });
 
-// Raise an event
-emitter.emit('messageLogged', { id: 1, url: 'http://' });
+logger.log('message');
 
 // Raise: logging (data: message)
-emitter.on('logging', (arg) => {
-  console.log('Logging message:', arg.data);
-});
+// emitter.on('logging', (arg) => {
+//   console.log('Logging message:', arg.data);
+// });
 
 // Raise an event
-emitter.emit('logging', { data: "Hello World" });
+// emitter.emit('logging', { data: "Hello World" });
 
 //////////////////////////////////////////
 // Extending EventEmitter
